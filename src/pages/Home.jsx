@@ -20,7 +20,6 @@ function Home() {
             const data = await response.json();
             setMovies(data.results);
             
-            
         } catch (error) {
             console.error(error);
         }

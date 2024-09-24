@@ -5,7 +5,6 @@ function SearchMovies({setMovies}) {
   const [input,setInput] = useState("") 
   
   const fetchMovies = async() =>{
-    console.log(input);
    
     const url = `https://advanced-movie-search.p.rapidapi.com/search/movie?query=${input}&page=1`;
 const options = {
@@ -19,9 +18,8 @@ const options = {
 try {
 	const response = await fetch(url, options);
 	const data = await response.json();
-  console.log(data);
-  
 	setMovies(data.results);
+  
 } catch (error) {
 	console.error(error);
 }
